@@ -24,9 +24,9 @@ module.exports = function generateCode(
   }
 
   output +=
-    `var ${namespace} = typeof exports.default === 'function' ` +
-    `? exports.default.options ` +
-    `: exports.default\n`
+    `var ${namespace} = typeof module.exports.default === 'function' ` +
+    `? module.exports.default.options ` +
+    `: module.exports.default\n`
 
   if (templateResult) {
     renderFnStartLine = output.split(splitRE).length
